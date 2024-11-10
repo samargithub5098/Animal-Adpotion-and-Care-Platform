@@ -1,0 +1,25 @@
+package com.animaladoption.service;
+
+import com.animaladoption.model.AdoptionRequest;
+import com.animaladoption.repository.AdoptionRequestRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class AdoptionRequestService {
+
+    @Autowired
+    private AdoptionRequestRepository adoptionRequestRepository;
+
+    // Method to create a new adoption request
+    public AdoptionRequest createAdoptionRequest(AdoptionRequest adoptionRequest) {
+        return adoptionRequestRepository.save(adoptionRequest);
+    }
+
+    // Method to get all adoption requests
+    public List<AdoptionRequest> getAllAdoptionRequests() {
+        return adoptionRequestRepository.findAll();
+    }
+}

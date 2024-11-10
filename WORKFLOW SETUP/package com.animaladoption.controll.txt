@@ -1,0 +1,35 @@
+package com.animaladoption.controller;
+
+import com.animaladoption.model.AdoptionRequest;
+import com.animaladoption.service.AdoptionRequestService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/adopt")
+@Validated
+public class AdoptionController {
+
+    @Autowired
+    private AdoptionRequestService adoptionRequestService;
+
+    // POST route to submit adoption request
+    @PostMapping
+    public ResponseEntity<AdoptionRequest> createAdoptionRequest(@Valid @RequestBody AdoptionRequest adoptionRequest) {
+        AdoptionRequest savedRequest = adoptionRequestService.createAdoptionRequest(adoptionRequest);
+        return new ResponseEntity<>(savedRequest, HttpStatus.CREATED);
+    }
+
+    // GET route to fetch all adoption requests
+    @GetMapping("/requests")
+    public ResponseEntity<List<AdoptionRequest>> getAllAdoptionRequests() {
+        List<AdoptionRequest> adoptionRequests = adoptionRequestService.getAllAdoptionRequests();
+        return new ResponseEntity<>(adoptionRequests, HttpStatus.OK);
+    }
+}
