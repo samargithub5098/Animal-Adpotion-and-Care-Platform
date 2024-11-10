@@ -1,0 +1,141 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and layout */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Header */
+header {
+  background-color: #3a7d7d;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+header h1 {
+  margin-bottom: 0.5rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Main Section */
+.adoptable-animals {
+  padding: 2rem 5%;
+}
+
+.animal-cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.animal-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 250px;
+  padding: 1rem;
+  text-align: center;
+  margin: 1rem;
+}
+
+.animal-img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.adopt-btn {
+  background-color: #3a7d7d;
+  color: white;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.adopt-btn:hover {
+  background-color: #318c8c;
+}
+
+/* Form Section */
+.adopt-form {
+  background-color: #fff;
+  padding: 2rem;
+  margin-top: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.adopt-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.adopt-form label {
+  margin-top: 10px;
+}
+
+.adopt-form input {
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.adopt-form button {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #3a7d7d;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.adopt-form button:hover {
+  background-color: #318c8c;
+}
+
+#formMessage {
+  margin-top: 20px;
+  font-weight: bold;
+  color: green;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #3a7d7d;
+  color: white;
+}

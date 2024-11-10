@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animal Adoption Platform</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Animal Adoption & Care</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="adoptable-animals">
+    <h2>Adoptable Animals</h2>
+    <div class="animal-cards">
+      <div class="animal-card">
+        <img src="cat.jpg" alt="Cat" class="animal-img">
+        <h3>Fluffy the Cat</h3>
+        <p>Age: 2 years</p>
+        <p>Breed: Persian</p>
+        <button class="adopt-btn" onclick="openAdoptForm('Fluffy the Cat')">Adopt Now</button>
+      </div>
+      <div class="animal-card">
+        <img src="dog.jpg" alt="Dog" class="animal-img">
+        <h3>Rex the Dog</h3>
+        <p>Age: 3 years</p>
+        <p>Breed: Labrador</p>
+        <button class="adopt-btn" onclick="openAdoptForm('Rex the Dog')">Adopt Now</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="adopt-form">
+    <h2>Adopt an Animal</h2>
+    <form id="adoptForm">
+      <label for="animalName">Animal Name:</label>
+      <input type="text" id="animalName" name="animalName" readonly>
+      <label for="yourName">Your Name:</label>
+      <input type="text" id="yourName" name="yourName" required>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" required>
+      <button type="submit">Submit Adoption Request</button>
+    </form>
+    <div id="formMessage"></div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 Animal Adoption & Care Platform</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

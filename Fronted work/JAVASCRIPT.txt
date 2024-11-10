@@ -1,0 +1,30 @@
+// Function to open the adoption form and populate the animal name
+function openAdoptForm(animalName) {
+  // Set the animal name in the form's animalName input field
+  document.getElementById('animalName').value = animalName;
+
+  // Scroll to the form
+  document.querySelector('.adopt-form').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Handle the form submission
+document.getElementById('adoptForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const animalName = document.getElementById('animalName').value;
+  const yourName = document.getElementById('yourName').value;
+  const email = document.getElementById('email').value;
+
+  if (yourName && email) {
+    // Show a success message
+    document.getElementById('formMessage').textContent = `Thank you, ${yourName}! We have received your adoption request for ${animalName}. We will contact you shortly!`;
+    document.getElementById('formMessage').style.color = 'green';
+
+    // Clear the form
+    document.getElementById('adoptForm').reset();
+  } else {
+    // Show an error message
+    document.getElementById('formMessage').textContent = 'Please fill in all fields.';
+    document.getElementById('formMessage').style.color = 'red';
+  }
+});
