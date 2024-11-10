@@ -1,0 +1,5 @@
+{
+  "animalName": "Fluffy the Cat",
+  "yourName": "John Doe",
+  "email": "john.doe@example.com"
+}

@@ -1,0 +1,41 @@
+const express = require('express');
+const router = express.Router();
+const AdoptionRequest = require('../models/adoptionRequest');
+
+// POST route to handle new adoption request
+router.post('/adopt', async (req, res) => {
+  const { animalName, yourName, email } = req.body;
+
+  // Basic validation
+  if (!animalName || !yourName || !email) {
+    return res.status(400).json({ message: 'Please provide all required fields.' });
+  }
+
+  try {
+    // Save the adoption request to the database
+    const newAdoptionRequest = await AdoptionRequest.create({
+      animalName,
+      yourName,
+      email
+    });
+
+    res.status(200).json({
+      message: `Thank you, ${yourName}! Your adoption request for ${animalName} has been received.`,
+      adoptionRequest: newAdoptionRequest
+    });
+  } catch (error) {
+    res.status(500).json({ message: 'An error occurred while submitting your request.' });
+  }
+});
+
+// GET route to fetch all adoption requests
+router.get('/adopt-requests', async (req, res) => {
+  try {
+    const requests = await AdoptionRequest.findAll();
+    res.status(200).json(requests);
+  } catch (error) {
+    res.status(500).json({ message: 'Error retrieving adoption requests.' });
+  }
+});
+
+module.exports = router;
