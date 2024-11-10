@@ -1,0 +1,23 @@
+const express = require('express');
+const axios = require('axios');
+const router = express.Router();
+
+// GET route to fetch animal data from an external API
+router.get('/animals', async (req, res) => {
+  try {
+    // External API URL for animal data (replace with a real API endpoint)
+    const response = await axios.get('https://jsonplaceholder.typicode.com/photos?_limit=5');
+    
+    // Map the data to match your animal info structure
+    const animals = response.data.map(item => ({
+      title: item.title,
+      imageUrl: item.url
+    }));
+
+    res.status(200).json(animals);
+  } catch (error) {
+    res.status(500).json({ message: 'Error fetching animal data.' });
+  }
+});
+
+module.exports = router;

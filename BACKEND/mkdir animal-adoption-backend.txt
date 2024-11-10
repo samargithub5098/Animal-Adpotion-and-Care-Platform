@@ -1,0 +1,3 @@
+mkdir animal-adoption-backend
+cd animal-adoption-backend
+npm init -y  # Initialize Node.js project
