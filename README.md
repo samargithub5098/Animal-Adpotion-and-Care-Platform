@@ -150,5 +150,5 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 Contact
 For any questions or suggestions, feel free to contact:
 
-Author: Your Name
-Email: your-email@example.com
+Author: Samar Malik
+Email:samarmalik5098@gmail.com
